@@ -6,4 +6,5 @@ openai
 faiss-cpu
 pymupdf
 streamlit
+pandas
 -e .
