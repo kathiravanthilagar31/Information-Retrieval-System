@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO,
 
 files_list=[
     'src/__init__.py',
-    'src/__helper.py',
+    'src/helper.py',
     '.env',
     'requirement.txt',
     'setup.py',
