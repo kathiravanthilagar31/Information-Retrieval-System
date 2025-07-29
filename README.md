@@ -1,66 +1,70 @@
-📚 Document Q&A Chatbot with Streamlit & Langchain
-This is the repository for the Information Retrieval System, a powerful and interactive web application built with Streamlit. It allows users to upload multiple PDF documents and then ask questions about their content. Leveraging the capabilities of Large Language Models (LLMs) and vector databases, the app provides conversational answers based on the information retrieved directly from your uploaded files.
+# 📚 Information Retrieval System: Document Q&A Chatbot
 
-✨ Features:
-Multi-PDF Upload: Seamlessly upload one or more PDF documents.
+This repository contains the code for an interactive web application built with Streamlit that allows users to upload multiple PDF documents and then ask questions about their content. Leveraging the capabilities of Large Language Models (LLMs) and vector databases, the app provides conversational answers based on the information retrieved directly from your uploaded files.
 
-Intelligent Q&A: Ask natural language questions about the content of your uploaded PDFs.
+---
 
-Conversational AI: The chatbot maintains conversation history, allowing for follow-up questions and contextual understanding.
+### ✨ Features:
 
-Information Retrieval: Utilizes advanced techniques to retrieve relevant information from documents before generating answers.
+* **Multi-PDF Upload**: Seamlessly upload one or more PDF documents.
+* **Intelligent Q&A**: Ask natural language questions about the content of your uploaded PDFs.
+* **Conversational AI**: The chatbot maintains conversation history, allowing for follow-up questions and contextual understanding.
+* **Information Retrieval**: Utilizes advanced techniques to retrieve relevant information from documents before generating answers.
+* **Clean Interface**: A user-friendly Streamlit interface for easy interaction.
 
-Clean Interface: A user-friendly Streamlit interface for easy interaction.
+---
 
-🛠️ Technologies Used:
-Streamlit: For building the interactive web application.
+### 🛠️ Technologies Used:
 
-Langchain: For orchestrating the LLM, memory, and retrieval components.
+* **Streamlit**: For building the interactive web application.
+* **Langchain**: For orchestrating the LLM, memory, and retrieval components.
+* **OpenAI**: As the Large Language Model (LLM) and Embedding provider (`text-embedding-3-small`).
+* **FAISS**: For efficient similarity search and vector storage.
+* **PyPDF2**: For extracting text from PDF documents.
+* **python-dotenv**: For securely managing API keys.
 
-OpenAI: As the Large Language Model (LLM) and Embedding provider (text-embedding-3-small).
+---
 
-FAISS: For efficient similarity search and vector storage.
+### 🚀 How to Run Locally:
 
-PyPDF2: For extracting text from PDF documents.
+Follow these steps to get your Document Q&A Chatbot up and running on your local machine:
 
-python-dotenv: For securely managing API keys.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/kathiravanthilagar31/Information-Retrieval-System.git](https://github.com/kathiravanthilagar31/Information-Retrieval-System.git)
+    cd Information-Retrieval-System
+    ```
 
-🚀 How to Run Locally:
-Clone the repository:
+2.  **Create a virtual environment (recommended):**
+    It's good practice to use a virtual environment to manage project dependencies.
+    ```bash
+    python -m venv venv
+    # On Windows:
+    .\venv\Scripts\activate
+    # On macOS/Linux:
+    source venv/bin/activate
+    ```
 
-Bash
+3.  **Install dependencies:**
+    With your virtual environment activated, install all required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-git clone https://github.com/kathiravanthilagar31/Information-Retrieval-System.git
-cd Information-Retrieval-System
-(Remember to replace your-username with your actual GitHub username if you're providing this for others to clone.)
+4.  **Set up your OpenAI API Key:**
+    Your application requires an OpenAI API key to interact with the LLM and embedding models.
+    * Create a new file named `.env` in the **root directory** of your project (the same directory as `app.py` and `requirements.txt`).
+    * Add your OpenAI API key to this file in the following format:
+        ```
+        OPENAI_API_KEY="your_openai_api_key_here"
+        ```
+        (Replace `"your_openai_api_key_here"` with your actual OpenAI API key.)
 
-Create a virtual environment (recommended):
+5.  **Run the Streamlit application:**
+    From the root directory of your project (where `app.py` is located), execute the following command:
+    ```bash
+    streamlit run app.py
+    ```
+    This command will start the Streamlit server, and your app will automatically open in your default web browser.
 
-Bash
-
-python -m venv venv
-# On Windows:
-.\venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-Install dependencies:
-
-Bash
-
-pip install -r requirements.txt
-Set up your OpenAI API Key:
-
-Create a file named .env in the root directory of your project (same level as app.py).
-
-Add your OpenAI API key to this file:
-
-OPENAI_API_KEY="your_openai_api_key_here"
-(Replace your_openai_api_key_here with your actual key.)
-
-Run the Streamlit application:
-
-Bash
-
-streamlit run app.py
-Your app will open in your default web browser!
-
+---
