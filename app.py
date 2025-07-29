@@ -44,22 +44,34 @@ def main():
     with st.sidebar:
         st.title("File Uploader")
         pdf_docs=st.file_uploader("Upload you PDF files here.",accept_multiple_files=True)
-    
-        if st.button("Submit and Initiate Chat"):
-            with st.spinner("processing"):
-                raw_text=get_text_from_pdf(pdf_docs)
-                text_chunk=get_chunks(raw_text)
-                vectordb=get_vectorstore(text_chunk)
-                st.session_state.conversation=get_conversation_chain(vectordb)
-                st.session_state.chatHistory=[]
-                st.session_state.chatHistory.append(AIMessage(content="Welcome!"))
-                st.session_state.show_success_message = True
-                st.rerun()
-                chat_messages_placeholder.empty()
-                chat_history(chat_messages_placeholder)
-        if st.session_state.show_success_message:
-            st.success('Done!')
-            st.session_state.show_success_message = False
+        
+        try:
+            if st.button("Submit and Initiate Chat"):
+                if not pdf_docs:
+                    st.error('Please upload atleast one PDF file to proceed.')
+                else:
+                    with st.spinner("processing"):
+                        raw_text=get_text_from_pdf(pdf_docs)
+                        text_chunk=get_chunks(raw_text)
+                        if not text_chunk:
+                            st.error("No text could be extracted or chunks created from the uploaded PDF(s). Please ensure the PDFs contain selectable text.")
+                            st.session_state.conversation = None
+                            st.session_state.chatHistory = []
+                            return
+                        vectordb=get_vectorstore(text_chunk)
+                        st.session_state.conversation=get_conversation_chain(vectordb)
+                        st.session_state.chatHistory=[]
+                        st.session_state.chatHistory.append(AIMessage(content="Welcome!"))
+                        st.session_state.show_success_message = True
+                        chat_messages_placeholder.empty()
+                        chat_history(chat_messages_placeholder)
+                        st.rerun()
+        except Exception as e:
+            st.error(f'An error occurred during processing: {e}. Please check your .pdf file or try again with a different file')
+            
+    if st.session_state.show_success_message:
+        st.success('Done!')
+        st.session_state.show_success_message = False
     
 
 if __name__=="__main__":
