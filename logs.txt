@@ -1,0 +1,10 @@
+[2025-07-29 13:09:03,619]:Creating Directory:src for the file:__init__.py
+[2025-07-29 13:09:03,619]:Creating empty file:src\__init__.py
+[2025-07-29 13:09:03,619]:Creating Directory:src for the file:__helper.py
+[2025-07-29 13:09:03,620]:Creating empty file:src\__helper.py
+[2025-07-29 13:09:03,630]:Creating empty file:.env
+[2025-07-29 13:09:03,631]:Creating empty file:requirement.txt
+[2025-07-29 13:09:03,631]:Creating empty file:setup.py
+[2025-07-29 13:09:03,632]:Creating empty file:app.py
+[2025-07-29 13:09:03,632]:Creating Directory:research for the file:trails.ipynb
+[2025-07-29 13:09:03,633]:Creating empty file:research\trails.ipynb
