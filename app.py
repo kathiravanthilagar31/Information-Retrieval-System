@@ -51,11 +51,14 @@ def main():
                 st.session_state.conversation=get_conversation_chain(vectordb)
                 st.session_state.chatHistory=[]
                 st.session_state.chatHistory.append(AIMessage(content="Welcome!"))
+                st.session_state.show_success_message = True
                 st.rerun()
                 chat_messages_placeholder.empty()
                 chat_history(chat_messages_placeholder)
-                st.success('Done!')
-        
+        if st.session_state.show_success_message:
+            st.success('Done!')
+            st.session_state.show_success_message = False
+    
 
 if __name__=="__main__":
     main()
