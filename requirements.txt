@@ -1,9 +1,9 @@
 python-dotenv
 langchain
-langchain_community
-langchain_openai
+langchain-community
+langchain-openai
 openai
 faiss-cpu
-PyPDF2
+pymupdf
 streamlit
 -e .
