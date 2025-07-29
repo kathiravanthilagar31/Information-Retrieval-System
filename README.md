@@ -31,7 +31,7 @@ Follow these steps to get your Document Q&A Chatbot up and running on your local
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/kathiravanthilagar31/Information-Retrieval-System.git](https://github.com/kathiravanthilagar31/Information-Retrieval-System.git)
+    git clone https://github.com/kathiravanthilagar31/Information-Retrieval-System.git
     cd Information-Retrieval-System
     ```
 
