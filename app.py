@@ -21,16 +21,16 @@ def main():
     st.set_page_config("Information Retrieval")
     st.title("Information Retrieval System")
 
+    if "conversation" not in st.session_state:
+        st.session_state.conversation=None
+    if "chatHistory" not in st.session_state:
+        st.session_state.chatHistory=None
+
         
     user_question=st.text_input("Ask anything about your PDF files..",
                                 key="user_question_input",
                                 value=st.session_state.user_question_input,
                                 on_change=user_input)
-
-    if "conversation" not in st.session_state:
-        st.session_state.conversation=None
-    if "chatHistory" not in st.session_state:
-        st.session_state.chatHistory=None
 
     chat_history() 
         
