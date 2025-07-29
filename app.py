@@ -29,6 +29,8 @@ def main():
         st.session_state.conversation=None
     if "chatHistory" not in st.session_state:
         st.session_state.chatHistory=[]
+    if "show_success_message" not in st.session_state:
+        st.session_state.show_success_message = False
 
     chat_messages_placeholder = st.empty()
         
